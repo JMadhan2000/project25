@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Select by options</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="Tn">Topic_name</label>
+            <select name="Tn" id="Tn">
+                {% for i in topics %}
+                <option value="{{i.Topic_name}}">{{i.Topic_name}}</option>
+                {% endfor %}
+            </select><br>
+            <label for="tn">Name</label>
+            <input type="text" id="tn" name="tn"><br>
+            <label for="tu">Url</label>
+            <input type="text" id="tu" name="tu"><br>
+            <label for="te">Email</label>
+            <input type="text" id="te" name="te"><br>
+
+            <input type="submit" value="Done">
+        </form>
+    </center>
+</body>
+</html>
